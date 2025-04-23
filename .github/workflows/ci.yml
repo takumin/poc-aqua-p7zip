@@ -35,3 +35,7 @@ jobs:
         aqua_opts: -a
     - name: Running task
       run: task
+    - name: Checkout feat/ip7z/7zip
+      run: git clone --depth 1 https://github.com/takumin/aqua-registry.git
+    - name: Installing p7zip
+      run: cd aqua-registry && aqua i -a
