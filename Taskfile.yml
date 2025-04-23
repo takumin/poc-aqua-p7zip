@@ -17,22 +17,22 @@ tasks:
   ci:
     silent: true
     cmds:
-    - git clone --depth 1 --branch feat/ip7z/7zip https://github.com/takumin/aqua-registry.git /tmp/aqua-registry
+    - git clone --depth 1 --branch feat/ip7z/7zip https://github.com/takumin/aqua-registry.git aqua-registry
     #######################################################################################################
     # aqua policy
     #######################################################################################################
-    - cmd: aqua policy allow "/tmp/aqua-registry/aqua-policy.yaml"
+    - cmd: aqua policy allow "aqua-registry/aqua-policy.yaml"
       platforms: [darwin]
-    - cmd: aqua policy allow "/tmp/aqua-registry/aqua-policy.yaml"
+    - cmd: aqua policy allow "aqua-registry/aqua-policy.yaml"
       platforms: [linux]
-    - cmd: aqua policy allow "/tmp/aqua-registry/aqua-policy.yaml"
+    - cmd: aqua policy allow "aqua-registry/aqua-policy.yaml"
       platforms: [windows]
     #######################################################################################################
     # aqua install
     #######################################################################################################
-    - cmd: cd "/tmp/aqua-registry" && aqua install -a
+    - cmd: cd "aqua-registry" && aqua install -a
       platforms: [darwin]
-    - cmd: cd "/tmp/aqua-registry" && aqua install -a
+    - cmd: cd "aqua-registry" && aqua install -a
       platforms: [linux]
-    - cmd: cd "/tmp/aqua-registry" && aqua install -a
+    - cmd: cd "aqua-registry" && aqua install -a
       platforms: [windows]
