@@ -13,3 +13,10 @@ tasks:
     - actionlint -shellcheck shellcheck
     - ghalint run
     - ghalint act
+
+  ci:
+    silent: true
+    cmds:
+    - git clone --depth 1 --branch feat/ip7z/7zip https://github.com/takumin/aqua-registry.git /tmp/aqua-registry
+    - aqua policy allow "/tmp/aqua-registry/aqua-policy.yaml"
+    - cd /tmp/aqua-registry && aqua i -a
